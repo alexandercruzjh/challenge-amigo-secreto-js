@@ -4,6 +4,12 @@ let amigos = [];
 
 function agregarAmigo() {
     let amigo = document.getElementById("amigo").value;
+
+    if (amigo == null || amigo.trim() === "") {
+        alert("Ingresa el nombre de un amigo valido.");
+        return;
+    }
+
     amigos.push(amigo);
 
     imprimirAmigos();
@@ -11,11 +17,6 @@ function agregarAmigo() {
 
 function imprimirAmigos() {
     let listar = document.getElementById('listaAmigos')
-
-    if (listar.value == null) {
-        alert("Ingresa el nombre de un amigo valido.");
-        return;
-    }
 
     listar.innerHTML = "";
     for (let index = 0; index < amigos.length; index++) {
